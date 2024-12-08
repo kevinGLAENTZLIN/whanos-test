@@ -1,0 +1,10 @@
+{
+  "name": "hello-world",
+  "description": "Hello World",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "4.17.1"
+  },
+  "main": "app/app.js"
+}

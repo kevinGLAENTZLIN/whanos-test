@@ -1,0 +1,8 @@
+FROM node:20.9.0-alpine3.17
+
+RUN apk add --no-cache bash
+SHELL ["/bin/bash", "-c"]
+ONBUILD COPY . /app
+ONBUILD WORKDIR /app
+ONBUILD RUN npm install --production=false
+ONBUILD CMD ["node", "."]
