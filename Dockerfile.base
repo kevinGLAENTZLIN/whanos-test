@@ -4,5 +4,5 @@ RUN apk add --no-cache bash
 SHELL ["/bin/bash", "-c"]
 ONBUILD COPY . /app
 ONBUILD WORKDIR /app
-ONBUILD RUN npm install --production=false
+ONBUILD RUN npm install
 ONBUILD CMD ["node", "app/app.js"]
