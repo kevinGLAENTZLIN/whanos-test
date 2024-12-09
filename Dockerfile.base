@@ -5,4 +5,4 @@ SHELL ["/bin/bash", "-c"]
 ONBUILD COPY . /app
 ONBUILD WORKDIR /app
 ONBUILD RUN npm install --production=false
-ONBUILD CMD ["node", "."]
+ONBUILD CMD ["node", "app/app.js"]

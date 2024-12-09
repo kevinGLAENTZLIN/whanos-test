@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
     name: my-application
-    namespace: whanos
     labels:
         app: my-application
 spec:
@@ -17,7 +16,7 @@ spec:
         spec:
             containers:
                 - name: my-application-container
-                  image: registry.digitalocean.com/whano/whanos-javascript:latest
+                  image: "<IMAGE_NAME>"
                   ports:
                       - containerPort: 3000
                       - containerPort: 5000
@@ -26,14 +25,11 @@ spec:
                           memory: "64Mi"
                       limits:
                           memory: "256Mi"
-            imagePullSecrets:
-                - name: whano
 ---
 apiVersion: v1
 kind: Service
 metadata:
     name: my-application-service
-    namespace: whanos
 spec:
     type: LoadBalancer
     ports:

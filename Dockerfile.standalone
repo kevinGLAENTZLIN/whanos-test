@@ -5,4 +5,4 @@ SHELL ["/bin/bash", "-c"]
 COPY . /app
 WORKDIR /app
 RUN npm install --production=false
-CMD [ "node", "." ]
+CMD [ "node", "app/app.js" ]
