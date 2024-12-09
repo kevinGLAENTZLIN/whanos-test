@@ -14,6 +14,8 @@ spec:
             labels:
                 app: my-application
         spec:
+            imagePullSecrets:
+                - name: whano
             containers:
                 - name: my-application-container
                   image: "<IMAGE_NAME>"
