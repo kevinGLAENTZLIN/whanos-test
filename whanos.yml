@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
     name: my-application
+    namespace: whanos
     labels:
         app: my-application
 spec:
@@ -14,8 +15,6 @@ spec:
             labels:
                 app: my-application
         spec:
-            imagePullSecrets:
-                - name: whano
             containers:
                 - name: my-application-container
                   image: "<IMAGE_NAME>"
@@ -27,11 +26,14 @@ spec:
                           memory: "64Mi"
                       limits:
                           memory: "256Mi"
+            imagePullSecrets:
+                - name: whano
 ---
 apiVersion: v1
 kind: Service
 metadata:
     name: my-application-service
+    namespace: whanos
 spec:
     type: LoadBalancer
     ports:
