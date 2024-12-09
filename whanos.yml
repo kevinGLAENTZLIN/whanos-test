@@ -17,7 +17,7 @@ spec:
         spec:
             containers:
                 - name: my-application-container
-                  image: "<IMAGE_NAME>"
+                  image: registry.digitalocean.com/whano/whanos-javascript:latest
                   ports:
                       - containerPort: 3000
                       - containerPort: 5000
